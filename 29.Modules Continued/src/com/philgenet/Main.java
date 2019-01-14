@@ -39,6 +39,7 @@ public class Main {
         // A VOID method is called a Procedure.  Procedure = Method returning type Void
         // A Method is also known as a Function.
 
+        // my attempt...
         int playerOnePosition = calculateHighScorePosition(1500);
         displayHighScorePosition("Jon", playerOnePosition);
 
@@ -50,6 +51,19 @@ public class Main {
 
         int playerFourPosition = calculateHighScorePosition(50);
         displayHighScorePosition("Naliece", playerFourPosition);
+
+        // instructor method...  (saves having to come up with and define separate variables "playerPosition"
+        int playerPosition = calculateHighScorePosition(1500);
+        displayHighScorePosition("Jon", playerPosition);
+
+        playerPosition = calculateHighScorePosition(900);
+        displayHighScorePosition("Bob", playerPosition);
+
+        playerPosition = calculateHighScorePosition(400);
+        displayHighScorePosition("Manalle", playerPosition);
+
+        playerPosition = calculateHighScorePosition(50);
+        displayHighScorePosition("Naliece", playerPosition);
 
     }
 
@@ -70,21 +84,34 @@ public class Main {
 
     public static void displayHighScorePosition(String playerName, int playerPosition) {
 
-        System.out.println(playerName + " managed to get into position " + playerPosition);
+        System.out.println(playerName + " managed to get into position " + playerPosition + " on the high score table.");
 
     }
 
     public static int calculateHighScorePosition(int playerScore) {
 
+//        if (playerScore >= 1000) {
+//            return 1;
+//        } else if (playerScore >=500 && playerScore < 1000) {
+//            return 2;
+//        } else if (playerScore >= 100 && playerScore < 500) {
+//            return 3;
+//        } else {
+//            return 4;
+//        }
+
+        // updated logic based on lesson 30.  No need for the playerScore < 1000 and playerScore < 500 because that will always be true
+        // since the previoius statement covers that condition. if the previous is false, it moves onto the next statement.
         if (playerScore >= 1000) {
             return 1;
-        } else if (playerScore >=500 && playerScore < 1000) {
+        } else if (playerScore >=500) {
             return 2;
-        } else if (playerScore >= 100 && playerScore < 500) {
+        } else if (playerScore >= 100) {
             return 3;
         } else {
             return 4;
         }
+
     }
 }
 
